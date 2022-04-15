@@ -4,11 +4,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        String userInput;
-        Scanner input = new Scanner(System.in);
-        boolean validated = false;
-
-	/*
+        /*
 	    Create a Rock-Paper-Scissors game that allows 2 people to play against each other.
 	    Requirements:
 	    - use Scanner to get user input
@@ -21,6 +17,9 @@ public class Main {
 	    - keep track of score
 	    - Extend your game to be tic-tac-toe instead of Rock-Paper-Scissors
 	 */
+
+        //main variables
+        String userInput;
 
         //region Main program
 
@@ -37,16 +36,10 @@ public class Main {
             appUtil.DisplayMainHeader();
 
             //ask user which game to play
-            System.out.println("\nWhich game do you want to play?");
-            System.out.print("1) Rock, Paper, Scissors" +
-                    "\n2) Tic-Tac-Toe" +
-                    "\n3) Quit" +
-                    "\n\nChoice: ");
+            appUtil.DisplayMainMenu();
 
-            do{
-                userInput = input.next();
-                validated = inputUtil.ValidateInput(userInput);
-            }while(!validated);
+            //get user input
+            userInput = inputUtil.SelectGame();
 
             switch(userInput){
                 case "1": game1.StartGame(); break;
@@ -54,6 +47,7 @@ public class Main {
                 case "3": break;
                 default: System.out.println("*Invalid option Please choose an option (1-3).\n"); break;
             }
+
         }while(!userInput.equals("3"));
 
         //end program

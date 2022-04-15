@@ -1,8 +1,26 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class InputUtilities {
 
     //region Methods
+
+    //Select Game method: check users input to determine what game to play
+    public String SelectGame(){
+        //variables for user input
+        String userInput;
+        Scanner input = new Scanner(System.in);
+        boolean validated = false;
+
+        //loop until user selects appropriate
+        do{
+            userInput = input.next();
+            validated = ValidateInput(userInput);
+        }while(!validated);
+
+        return userInput;
+    }
 
     //Validate Input method: Rock, Paper, Scissors input validation to prevent unwanted user input.
     public boolean ValidateInput(String input){

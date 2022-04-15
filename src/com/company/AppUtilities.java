@@ -4,6 +4,8 @@ public class AppUtilities {
 
     //region Methods
 
+    //region Screen Methods
+
     //Clear Screen method: clears the space down on the screen to 'hide' previous output.
     public void ClearScreen(){
         System.out.println("\n\n\n\n\n\n");
@@ -31,10 +33,20 @@ public class AppUtilities {
         System.out.println("");
     }
 
+    public void DisplayMainMenu(){
+        System.out.println("\nWhich game do you want to play?");
+        System.out.print("1) Rock, Paper, Scissors" +
+                "\n2) Tic-Tac-Toe" +
+                "\n3) Quit" +
+                "\n\nChoice: ");
+    }
+
     //End Program method: Thank user for playing at the end of program.
     public void EndProgram(){
         System.out.println("Thank you for playing!");
     }
+
+    //endregion
 
     //region Rock, Paper, Scissors methods
     //Compare Choice method: compares and displays choices to user.
